@@ -22,3 +22,7 @@ Command to create a new app:
 django-admin startapp home
 ```
 Everytime we create a new app then it has to be added to the settings file of the project. It this case that file is 'smartnotes/settings.py' at the `INSTALLED_APPS` constant.
+
+# Adding views
+Views work as some kind of controllers which receive requests and then render a template to finally show to the user.
+In order to get a view working, we have to add a new entrypoint in the 'urls.py' file as a url pattern which calls the desired view as a method.
