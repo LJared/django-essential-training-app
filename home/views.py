@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from datetime import datetime
 
 def home(request):
     """Handles requests to the home page."""
-    return HttpResponse("Hello, world. You're at the home index.")
+    return render(request, "home/welcome.html", {
+        'today': datetime.today(),
+    })

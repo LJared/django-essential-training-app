@@ -23,6 +23,8 @@ django-admin startapp home
 ```
 Everytime we create a new app then it has to be added to the settings file of the project. It this case that file is 'smartnotes/settings.py' at the `INSTALLED_APPS` constant.
 
-# Adding views
+# Adding views and templates
 Views work as some kind of controllers which receive requests and then render a template to finally show to the user.
 In order to get a view working, we have to add a new entrypoint in the 'urls.py' file as a url pattern which calls the desired view as a method.
+
+A template is a html file located within a templates folder. A rendering engine uses Django Template Language (DTL) to convert everything to pure html code which can be shown to the user.
