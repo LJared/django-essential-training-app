@@ -28,3 +28,6 @@ Views work as some kind of controllers which receive requests and then render a 
 In order to get a view working, we have to add a new entrypoint in the 'urls.py' file as a url pattern which calls the desired view as a method.
 
 A template is a html file located within a templates folder. A rendering engine uses Django Template Language (DTL) to convert everything to pure html code which can be shown to the user.
+
+# Modularization
+A good practice is to keep all apps contained, meaning all their dependencies and necessary resources are in the same app folder. In case of deleting an app, there should not be any errors in the project. Therefore, in the 'urls.py' we use the 'include' function to include the app's 'urls.py' file. That way, if an app is deleted, then it won't break the project.
