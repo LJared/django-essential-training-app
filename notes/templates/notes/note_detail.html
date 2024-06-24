@@ -7,4 +7,5 @@
 
 <a href="{% url 'note.list' %}" class="btn btn-primary">Back</a>
 <a href="{% url 'note.update' pk=note.id %}" class="btn btn-primary">Edit</a>
+<a href="{% url 'note.delete' pk=note.id %}" class="btn btn-danger">Delete</a>
 {% endblock %}

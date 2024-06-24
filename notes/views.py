@@ -17,6 +17,12 @@ class NoteUpdateView(UpdateView):
     form_class = NoteForm
 
 
+class NoteDeleteView(DeleteView):
+    model = Note
+    success_url = '/smart/notes'
+    template_name = 'notes/note_delete.html'
+
+
 class NoteListView(ListView):
     model = Note
     context_object_name = 'notes'
