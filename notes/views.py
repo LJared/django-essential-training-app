@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, DetailView, ListView
+from django.views.generic import CreateView, DetailView, DeleteView, ListView, UpdateView
 from .models import Note
 from .forms import NoteForm
 
@@ -6,6 +6,12 @@ from .forms import NoteForm
 # we need to comply with the naming conventions of the templates.
 # Otherwise, the name of the template is specified in the property 'template_name'
 class NoteCreateView(CreateView):
+    model = Note
+    success_url = '/smart/notes'
+    form_class = NoteForm
+
+
+class NoteUpdateView(UpdateView):
     model = Note
     success_url = '/smart/notes'
     form_class = NoteForm
