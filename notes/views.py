@@ -48,7 +48,7 @@ class NoteDeleteView(DeleteView):
 class NoteListView(LoginRequiredMixin, ListView):
     model = Note
     context_object_name = 'notes'
-    login_url = '/admin'
+    login_url = '/login'
 
     def get_queryset(self):
         """
