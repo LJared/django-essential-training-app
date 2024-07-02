@@ -1,4 +1,5 @@
-from django.views.generic import CreateView, DetailView, DeleteView, ListView, UpdateView
+from django.views.generic import CreateView, DetailView, ListView, UpdateView
+from django.views.generic.edit import DeleteView
 from .models import Note
 from .forms import NoteForm
 
@@ -20,6 +21,9 @@ class NoteUpdateView(UpdateView):
 class NoteDeleteView(DeleteView):
     model = Note
     success_url = '/smart/notes'
+
+    # In case the template name is not specified in the property 'template_name'
+    # Django will try to find a template with the name 'note_confirm_delete.html'
     template_name = 'notes/note_delete.html'
 
 
