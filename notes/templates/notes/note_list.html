@@ -1,16 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 class="my-5">These are all the existing notes:</h1>
-    <div class="row row-cols3 g-2">
-        {% for note in notes %}
-        <div class="col">
-            <div class="p-3 border">
-                <a href="{% url 'note.detail' pk=note.id %}" class="text-dark text-decoration-none">
-                    <h3>{{ note.title }}</h3>
-                </a>
-                {{ note.text|truncatechars:10 }}
-            </div>
+<nav class="navbar navbar-light">
+    <form class="form-inline" action="{% url 'logout' %}" method="POST">
+        {% csrf_token %}
+        <button class="btn btn-outline-success" type="submit">Logout</button>
+    </form>
+</nav>
+
+<h1 class="my-5">These are all the existing notes:</h1>
+<div class="row row-cols3 g-2">
+    {% for note in notes %}
+    <div class="col">
+        <div class="p-3 border">
+            <a href="{% url 'note.detail' pk=note.id %}" class="text-dark text-decoration-none">
+                <h3>{{ note.title }}</h3>
+            </a>
+            {{ note.text|truncatechars:10 }}
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
