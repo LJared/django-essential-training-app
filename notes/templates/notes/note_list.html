@@ -1,11 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-<nav class="navbar navbar-light">
-    <form class="form-inline" action="{% url 'logout' %}" method="POST">
-        {% csrf_token %}
-        <button class="btn btn-outline-success" type="submit">Logout</button>
-    </form>
-</nav>
 
 <h1 class="my-5">These are all the existing notes:</h1>
 <div class="row row-cols3 g-2">
